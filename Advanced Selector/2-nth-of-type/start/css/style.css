@@ -1,0 +1,7 @@
+/* Structural Pseudo-classes------------------ */
+
+div:nth-last-of-type(odd) {
+  background: #52bab3;
+  color: white;
+}
+

@@ -1,0 +1,21 @@
+/* ================================= 
+  Flexbox
+==================================== */
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 450px;
+}
+
+.item {	
+	flex: 1;
+}
+
+.item-4 {
+	align-self: center;
+}
+
+.item-2 {
+	flex: 2;
+}
