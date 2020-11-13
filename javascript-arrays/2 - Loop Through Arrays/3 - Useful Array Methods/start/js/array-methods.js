@@ -8,6 +8,7 @@ const daysInWeek = [
   'Sunday'
 ];
 
+
 const fruit = [
   'apple', 
   'orange', 
