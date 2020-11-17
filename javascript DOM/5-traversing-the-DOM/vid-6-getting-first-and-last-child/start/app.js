@@ -7,8 +7,8 @@ const listUl = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 const lis = listUl.children;
-let firstListItem = listUl.firstElementChild;
-const lastListItem = listUl. lastElementChild;
+const firstListItem = listUl.firstElementChild;
+const lastListItem = listUl.lastElementChild;
 
 
 
@@ -89,17 +89,35 @@ addItemButton.addEventListener('click', () => {
 
 firstListItem.querySelector('button.up').style.display = 'none';
 firstListItem.querySelector('button.down').style.marginLeft = 'auto';
+lastListItem.querySelector('button.down').style.display = 'none';
 
-// listening for down button click on the first item on the list
-firstListItem.querySelector('button.down').addEventListener('click', function(){
-  // re-displaying the button up
-  firstListItem.querySelector('button.up').style.display = '';
-  // fixing the button down & up margin
-  firstListItem.querySelector('button.down').style.marginLeft = '';
-  firstListItem.querySelector('button.up').style.marginLeft = 'auto';
-
-  // re-assign the firstListItem into the next sibling
-  firstListItem = firstListItem.nextElementSibling;
-  firstListItem.querySelector('button.up').style.display = 'none';
-  firstListItem.querySelector('button.down').style.marginLeft = 'auto';
+listDiv.querySelector('ul').addEventListener('click', function(){
+  for(let i = 0; i < lis.length; i++){
+    if(i == 0) {
+      lis[i].querySelector('button.up').style.display = 'none';
+      lis[i].querySelector('button.down').style.marginLeft = 'auto';
+    } else if(i == lis.length - 1){
+      lis[i].querySelector('button.down').style.display = 'none';
+      lis[i].querySelector('button.up').style.marginLeft = 'auto';
+    } else {
+      lis[i].querySelector('button.up').style.display = '';
+      lis[i].querySelector('button.down').style.display = '';
+      lis[i].querySelector('button.down').style.marginLeft = '';
+      lis[i].querySelector('button.up').style.marginLeft = 'auto';
+    }
+  }
 });
+
+// // listening for down button click on the first item on the list
+// firstListItem.querySelector('button.down').addEventListener('click', function(){
+//   // re-displaying the button up
+//   firstListItem.querySelector('button.up').style.display = '';
+//   // fixing the button down & up margin
+//   firstListItem.querySelector('button.down').style.marginLeft = '';
+//   firstListItem.querySelector('button.up').style.marginLeft = 'auto';
+
+//   // re-assign the firstListItem into the next sibling
+//   firstListItem = firstListItem.nextElementSibling;
+//   firstListItem.querySelector('button.up').style.display = 'none';
+//   firstListItem.querySelector('button.down').style.marginLeft = 'auto';
+// });
