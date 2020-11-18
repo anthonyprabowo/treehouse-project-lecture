@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const li = document.createElement('li');
-    appendToLI('span', 'textContent', 'text');
+    appendToLI('span', 'textContent', text);
     appendToLI('label', 'textContent', 'Confirmed')
       .appendChild(createElement('input', 'type', 'checkbox'));
     appendToLI('button', 'textContent', 'edit');
